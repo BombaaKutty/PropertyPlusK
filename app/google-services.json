@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "798656016374",
+    "project_id": "propertyplusk",
+    "storage_bucket": "propertyplusk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798656016374:android:1aec322ce2ce73a2c061d7",
+        "android_client_info": {
+          "package_name": "com.example.propertyplusk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTg8D8IMkosWDu0bzXoGuf76VnLzum28Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
