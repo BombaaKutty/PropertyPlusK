@@ -11,6 +11,7 @@ import com.example.propertyplusk.ui.theme.screens.about.AboutScreen
 import com.example.propertyplusk.ui.theme.screens.details.DetailsScreen
 import com.example.propertyplusk.ui.theme.screens.home.HomeScreen
 import com.example.propertyplusk.ui.theme.screens.intent.IntentScreen
+import com.example.propertyplusk.ui.theme.screens.login.LoginScreen
 import com.example.propertyplusk.ui.theme.screens.property.PropertyScreen
 import com.example.propertyplusk.ui.theme.screens.signup.SignUpScreen
 import com.example.propertyplusk.ui.theme.screens.splash.SplashScreen
@@ -53,6 +54,9 @@ fun AppNavHost(
         }
         composable(ROUT_SIGNUP) {
             SignUpScreen(navController = navController)
+        }
+        composable(ROUT_LOGIN) {
+            LoginScreen(navController = navController)
         }
 
     }
