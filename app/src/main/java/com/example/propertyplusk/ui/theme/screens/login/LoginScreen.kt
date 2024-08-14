@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.KeyboardType
@@ -39,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.propertyplusk.data.AuthViewModel
 import com.example.propertyplusk.navigation.ROUT_SIGNUP
 import com.example.propertyplusk.ui.theme.Blue
 
@@ -113,8 +115,11 @@ fun LoginScreen(navController: NavController){
         )
         Spacer(modifier = Modifier.height(10.dp))
 
+        val context = LocalContext.current
+        val authViewModel = AuthViewModel.AuthViewModel(navController, context)
+
         Button(
-            onClick = { },
+            onClick = { authViewModel.login( email, password) },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)
@@ -132,8 +137,9 @@ fun LoginScreen(navController: NavController){
             text = "Do not have an account?Register",
             fontSize = 18.sp,
             fontFamily = FontFamily.SansSerif,
-            color = Color.Black,
-            modifier = Modifier.fillMaxWidth().clickable { navController.navigate(ROUT_SIGNUP) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { navController.navigate(ROUT_SIGNUP) },
             textAlign = TextAlign.Center
 
         )

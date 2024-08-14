@@ -17,6 +17,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.propertyplusk.R
 import com.example.propertyplusk.navigation.ROUT_SIGNUP
 import com.example.propertyplusk.ui.theme.Purple40
@@ -43,6 +47,11 @@ fun SplashScreen(navController: NavController){
         //End of coroutine scope
 
         //Lottie Animation
+        val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.property))
+        val progress by animateLottieCompositionAsState(composition)
+        LottieAnimation(composition, progress,modifier = Modifier.size(300.dp))
+
+
 
         //End of lottie animation
 

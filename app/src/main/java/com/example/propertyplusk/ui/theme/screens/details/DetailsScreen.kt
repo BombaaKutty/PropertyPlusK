@@ -87,19 +87,13 @@ fun DetailsScreen(navController: NavController){
         )
 
 
-        Box (modifier = Modifier.height(400.dp), contentAlignment = Alignment.Center){
+        Box (modifier = Modifier.height(300.dp), contentAlignment = Alignment.Center){
 
             Image(
                 painter = painterResource(id =com.example.propertyplusk.R.drawable.home ),
                 contentDescription ="home",
                 modifier = Modifier.fillMaxSize()
             )
-
-
-
-
-
-
 
             Spacer(modifier = Modifier.height(20.dp))
 
