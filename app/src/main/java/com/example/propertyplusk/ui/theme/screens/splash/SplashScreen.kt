@@ -53,6 +53,7 @@ fun SplashScreen(navController: NavController){
 
 
 
+
         //End of lottie animation
 
     }
