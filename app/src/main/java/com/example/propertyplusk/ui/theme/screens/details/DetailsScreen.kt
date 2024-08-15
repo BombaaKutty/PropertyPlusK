@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.propertyplusk.navigation.ROUT_DETAIL
+import com.example.propertyplusk.navigation.ROUT_INTENT
 import com.example.propertyplusk.ui.theme.Blue
 
 
@@ -87,20 +88,26 @@ fun DetailsScreen(navController: NavController){
         )
 
 
-        Box (modifier = Modifier.height(300.dp), contentAlignment = Alignment.Center){
+        Box (modifier = Modifier.height(400.dp), contentAlignment = Alignment.Center){
 
             Image(
-                painter = painterResource(id =com.example.propertyplusk.R.drawable.home ),
+                painter = painterResource(id = com.example.propertyplusk.R.drawable.home),
                 contentDescription ="home",
                 modifier = Modifier.fillMaxSize()
             )
+
+
+
+
+
+
 
             Spacer(modifier = Modifier.height(20.dp))
 
         }
 
         //SEARCHBAR
-        var search by remember { mutableStateOf("") }
+        var search by remember { mutableStateOf("")}
 
         OutlinedTextField(
             value = search,
@@ -108,8 +115,8 @@ fun DetailsScreen(navController: NavController){
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "search") },
-            placeholder = { Text(text = "Choose your location") }
+            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "search")},
+            placeholder = { Text(text = "Choose your location")}
         )
 
         //END OF SEARCHBAR
@@ -133,7 +140,7 @@ fun DetailsScreen(navController: NavController){
                 Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
                     Image(
-                        painter = painterResource(id = com.example.propertyplusk.R.drawable.home),
+                        painter = painterResource(id =com.example.propertyplusk.R.drawable.home),
                         contentDescription ="home",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
@@ -241,16 +248,33 @@ fun DetailsScreen(navController: NavController){
 
         }
 
+        Spacer(modifier = Modifier.height(20.dp))
+
+
+        Button(
+            onClick = { navController.navigate(ROUT_INTENT) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp)
+                .padding(start = 20.dp, end = 20.dp),
+            colors = ButtonDefaults.buttonColors(Blue),
+            shape = RoundedCornerShape(10.dp)
+        ) {
+
+            Text(text = "Continue")
+
+        }
+
+
+
 
 
     }
 
-
 }
 
 
-
-
+//PREVIEW FUNCTION
 @Composable
 @Preview(showBackground = true)
 fun DetailsScreenPreview(){

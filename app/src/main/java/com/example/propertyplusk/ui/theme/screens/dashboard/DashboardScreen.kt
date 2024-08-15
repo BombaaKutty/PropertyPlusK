@@ -32,8 +32,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.propertyplusk.R
+import com.example.propertyplusk.navigation.ADD_PRODUCTS_URL
 import com.example.propertyplusk.navigation.ROUT_HOME
 import com.example.propertyplusk.navigation.ROUT_PROPERTY
+import com.example.propertyplusk.navigation.VIEW_PRODUCTS_URL
 import com.example.propertyplusk.ui.theme.Blue
 import com.example.propertyplusk.ui.theme.Lavender
 import com.example.propertyplusk.ui.theme.Purple40
@@ -74,7 +76,7 @@ fun DashboardScreen(navController: NavController){
 
         Column (modifier = Modifier.verticalScroll(rememberScrollState())){
             //Start of card
-              Card(modifier = Modifier
+              Card(modifier = Modifier.clickable {  }
                   .fillMaxWidth()
                   .height(650.dp),
                   shape = RoundedCornerShape(topStart = 60.dp, topEnd = 60.dp),
@@ -152,7 +154,7 @@ fun DashboardScreen(navController: NavController){
                           Column {
                               Spacer(modifier = Modifier.height(10.dp))
 
-                              Box (modifier = Modifier.fillMaxWidth(),
+                              Box (modifier = Modifier.fillMaxWidth().clickable { navController.navigate( ADD_PRODUCTS_URL ) },
                                   contentAlignment = Alignment.Center){
                                   Image(painter = painterResource(id = R.drawable.settings),
                                       contentDescription ="home" ,
@@ -181,7 +183,7 @@ fun DashboardScreen(navController: NavController){
                           Column {
                               Spacer(modifier = Modifier.height(10.dp))
 
-                              Box (modifier = Modifier.fillMaxWidth(),
+                              Box (modifier = Modifier.fillMaxWidth().clickable { navController.navigate(ADD_PRODUCTS_URL ) },
                                   contentAlignment = Alignment.Center){
                                   Image(painter = painterResource(id = R.drawable.profile),
                                       contentDescription ="home" ,
@@ -206,7 +208,7 @@ fun DashboardScreen(navController: NavController){
                   //Row 3
                   Row (modifier = Modifier.padding(20.dp)){
                       //Card1
-                      Card(modifier = Modifier
+                      Card(modifier = Modifier.clickable { navController.navigate(ADD_PRODUCTS_URL ) }
                           .width(160.dp)
                           .height(165.dp), elevation = CardDefaults.cardElevation(27.dp)) {
                           Column {
@@ -214,7 +216,7 @@ fun DashboardScreen(navController: NavController){
 
                               Box (modifier = Modifier.fillMaxWidth(),
                                   contentAlignment = Alignment.Center){
-                                  Image(painter = painterResource(id = R.drawable.homeb),
+                                  Image(painter = painterResource(id = R.drawable.add),
                                       contentDescription ="home" ,
                                       modifier = Modifier
                                           .size(80.dp))
@@ -222,7 +224,7 @@ fun DashboardScreen(navController: NavController){
                               }
                               Spacer(modifier = Modifier.height(10.dp))
 
-                              Text(text = "Home",
+                              Text(text = "Add",
                                   fontSize = 24.sp,
                                   modifier = Modifier.fillMaxWidth(),
                                   textAlign = TextAlign.Center)
@@ -235,7 +237,7 @@ fun DashboardScreen(navController: NavController){
 
 
                       //Card2 starts
-                      Card(modifier = Modifier
+                      Card(modifier = Modifier.clickable { navController.navigate(VIEW_PRODUCTS_URL ) }
                           .width(160.dp)
                           .height(165.dp), elevation = CardDefaults.cardElevation(27.dp)) {
                           Column {
@@ -243,7 +245,7 @@ fun DashboardScreen(navController: NavController){
 
                               Box (modifier = Modifier.fillMaxWidth(),
                                   contentAlignment = Alignment.Center){
-                                  Image(painter = painterResource(id = R.drawable.homeb),
+                                  Image(painter = painterResource(id = R.drawable.view),
                                       contentDescription ="home" ,
                                       modifier = Modifier
                                           .size(80.dp))
@@ -251,7 +253,7 @@ fun DashboardScreen(navController: NavController){
                               }
                               Spacer(modifier = Modifier.height(10.dp))
 
-                              Text(text = "Home",
+                              Text(text = "View",
                                   fontSize = 24.sp,
                                   modifier = Modifier.fillMaxWidth(),
                                   textAlign = TextAlign.Center)
