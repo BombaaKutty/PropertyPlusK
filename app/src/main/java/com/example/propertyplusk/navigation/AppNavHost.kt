@@ -13,8 +13,6 @@ import com.example.propertyplusk.ui.theme.screens.details.DetailsScreen
 import com.example.propertyplusk.ui.theme.screens.home.HomeScreen
 import com.example.propertyplusk.ui.theme.screens.intent.IntentScreen
 import com.example.propertyplusk.ui.theme.screens.login.LoginScreen
-import com.example.propertyplusk.ui.theme.screens.products.AddProductsScreen
-import com.example.propertyplusk.ui.theme.screens.products.ViewProductsScreen
 import com.example.propertyplusk.ui.theme.screens.property.PropertyScreen
 import com.example.propertyplusk.ui.theme.screens.signup.SignUpScreen
 import com.example.propertyplusk.ui.theme.screens.splash.SplashScreen
@@ -63,12 +61,6 @@ fun AppNavHost(
         }
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController = navController)
-        }
-        composable(ADD_PRODUCTS_URL) {
-            AddProductsScreen(navController = navController)
-        }
-        composable(VIEW_PRODUCTS_URL) {
-            ViewProductsScreen(navController = navController)
         }
 
     }
